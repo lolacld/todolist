@@ -1,6 +1,6 @@
 <?php
 
-//require_once 'Controller.php';
+// Class gérant ma page d'affichage qui va recuperer les variables de
 
 class PageController extends Controller
 {
@@ -31,5 +31,23 @@ class PageController extends Controller
         ];
 
         return $this->render('page/index', $data);
+    }
+
+    public function loginAction(){
+
+        $FormModel = new FormModel();
+        $form = $FormModel->find();
+        $form->fetchAll();
+
+        foreach ($form as $Form){
+            $form .= $Form->toString() . '<br>';
+        }
+
+        $data = [
+            'title' => 'Connectez-vous',
+            'content' => $form, // affiche le formulaire
+        ];
+
+        return $this->render('page/login', $data);
     }
 }
