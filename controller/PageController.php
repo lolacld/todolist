@@ -33,6 +33,7 @@ class PageController extends Controller
         return $this->render('page/index', $data);
     }
 
+    // LOGIN
     public function loginAction(){
 
         $FormModel = new FormModel();
