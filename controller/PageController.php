@@ -36,14 +36,6 @@ class PageController extends Controller
     // LOGIN
     public function loginAction(){
 
-        $FormModel = new FormModel();
-        $form = $FormModel->find();
-        $form->fetchAll();
-
-        foreach ($form as $Form){
-            $form .= $Form->toString() . '<br>';
-        }
-
         $data = [
             'title' => 'Connectez-vous',
             'content' => $form, // affiche le formulaire
