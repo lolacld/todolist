@@ -1,5 +1,5 @@
 <?php
-
+// connexion and security file
 class DatabaseHelper
 {
 
